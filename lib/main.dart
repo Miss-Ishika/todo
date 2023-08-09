@@ -4,7 +4,7 @@ import 'package:todoapp/screens/home.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    theme: ThemeData.dark(),
+    // theme: ThemeData.dark(),
     home: MyApp(),
   ));
 }

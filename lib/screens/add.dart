@@ -37,21 +37,98 @@ class _addNewState extends State<addNew> {
     return Scaffold(
       appBar: AppBar(
           title: Center(
-        child: Text(isEdit ? "Edit ToDo" : "Add ToDo"),
+        child: Text(isEdit ? "Edit" : "Add new"),
       )),
       body: ListView(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.only(top: 50, left: 20, right: 20),
         children: [
-          TextField(
-            controller: titleController,
-            decoration: InputDecoration(hintText: 'Title'),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Color.fromARGB(255, 210, 87, 251),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color.fromARGB(255, 252, 251, 251),
+                      blurRadius: 10,
+                      spreadRadius: 0.5,
+                      offset: Offset(-3, -3))
+                ]),
+            width: double.infinity,
+            height: 100,
+            child: Container(
+              padding: EdgeInsets.all(15),
+              width: double.infinity,
+              height: 100,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color.fromARGB(255, 210, 87, 251),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 77, 72, 72),
+                        blurRadius: 10,
+                        spreadRadius: 0.2,
+                        offset: Offset(3, 3))
+                  ]),
+              child: Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.black)),
+                child: TextField(
+                  controller: titleController,
+                  decoration: InputDecoration(hintText: 'Title'),
+                ),
+              ),
+            ),
           ),
-          TextField(
-            controller: descController,
-            decoration: InputDecoration(hintText: 'Desciption'),
-            keyboardType: TextInputType.multiline,
-            maxLines: 50,
-            minLines: 3,
+          SizedBox(
+            height: 50,
+          ),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Color.fromARGB(255, 210, 87, 251),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color.fromARGB(255, 252, 251, 251),
+                      blurRadius: 10,
+                      spreadRadius: 0.5,
+                      offset: Offset(-3, -3))
+                ]),
+            width: double.infinity,
+            height: 400,
+            child: Container(
+              padding: EdgeInsets.all(15),
+              width: double.infinity,
+              height: 400,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color.fromARGB(255, 210, 87, 251),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 77, 72, 72),
+                        blurRadius: 10,
+                        spreadRadius: 0.2,
+                        offset: Offset(3, 3))
+                  ]),
+              child: Container(
+                height: 400,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.black)),
+                child: TextField(
+                  controller: descController,
+                  decoration: InputDecoration(hintText: 'Desciption'),
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 50,
+                  minLines: 3,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 50,
           ),
           ElevatedButton(
               onPressed: () {
@@ -62,6 +139,7 @@ class _addNewState extends State<addNew> {
               ))
         ],
       ),
+      backgroundColor: Color.fromARGB(255, 210, 87, 251),
     );
   }
 
